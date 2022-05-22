@@ -29,4 +29,9 @@ public class Servicio {
                 .findFirst()
                 .orElse(null);
     }
+
+    public boolean eliminar(Long id) {
+        Persona persona = findPersona(id);
+        return personas.remove(persona);
+    }
 }
