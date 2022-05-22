@@ -23,4 +23,10 @@ public class Servicio {
                 .findFirst()
                 .orElse(null);
     }
+    public Persona findPersona(String nombre) {
+        return personas.stream()
+                .filter(p->p.getNombre().equals(nombre))
+                .findFirst()
+                .orElse(null);
+    }
 }
