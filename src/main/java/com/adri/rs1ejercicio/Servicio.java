@@ -3,8 +3,7 @@ package com.adri.rs1ejercicio;
 import com.adri.rs1ejercicio.model.Persona;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class Servicio {
@@ -14,14 +13,14 @@ public class Servicio {
         this.personas = new ArrayList<>();
     }
     public void addPersona(Persona persona) {
+        persona.setId(Integer.toUnsignedLong(personas.size()));
         personas.add(persona);
         System.out.println(personas);
     }
-
-    public Persona findPersona(String id) {
-            return personas.stream()
-                    .filter(p-> p.getId().equals(id))
-                    .findFirst()
-                    .orElse(null);
+    public Persona findPersona(Long id) {
+        return personas.stream()
+                .filter(p->p.getId().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 }

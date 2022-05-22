@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 public interface Update {
     @RequestMapping("/persona/{id}")
-    Persona updatePersona(@PathVariable("id") String id, @RequestBody Persona personaMod);
+    Persona updatePersona(@PathVariable("id") Long id, @RequestBody Persona personaMod);
 }

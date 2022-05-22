@@ -8,6 +8,6 @@ import lombok.Data;
 public class Persona {
     private Long id;
     private String nombre;
-    private int edad;
+    private Integer edad;
     private String poblacion;
 }
