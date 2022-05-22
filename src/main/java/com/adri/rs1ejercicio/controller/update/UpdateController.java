@@ -3,11 +3,13 @@ package com.adri.rs1ejercicio.controller.update;
 import com.adri.rs1ejercicio.Servicio;
 import com.adri.rs1ejercicio.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
 @RestController
+@RequestMapping("/persona")
 public class UpdateController implements Update{
     @Autowired
     Servicio servicio;

@@ -1,12 +1,9 @@
 package com.adri.rs1ejercicio.controller.update;
 
 import com.adri.rs1ejercicio.model.Persona;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 public interface Update {
-    @RequestMapping("/persona/{id}")
+    @PutMapping("/{id}")
     Persona updatePersona(@PathVariable("id") Long id, @RequestBody Persona personaMod);
 }
