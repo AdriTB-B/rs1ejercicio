@@ -1,21 +1,23 @@
-package com.adri.rs1ejercicio.controller.update;
+package com.adri.rs1ejercicio.controller;
 
-import com.adri.rs1ejercicio.Servicio;
+import com.adri.rs1ejercicio.IPersonaService;
 import com.adri.rs1ejercicio.model.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/persona")
-public class UpdateController implements Update{
+public class UpdateController{
     @Autowired
-    Servicio servicio;
+    IPersonaService servicio;
 
-    @Override
-    public Persona updatePersona(Long id, Persona pModificada) {
+    @PutMapping("/{id}")
+    public Persona updatePersona(
+            @PathVariable("id") Long id,
+            @RequestBody Persona pModificada
+    ) {
         Persona pGuardada = servicio.findPersona(id);
         Optional<Persona> oP = Optional.of(pModificada);
         //Update
